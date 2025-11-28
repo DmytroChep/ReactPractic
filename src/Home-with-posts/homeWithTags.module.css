@@ -1,0 +1,251 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #003B46;
+    height: 77px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-bottom: 1px solid #929292;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    height: 53px;
+    box-sizing: border-box;
+    position: absolute; 
+    left: 28px;
+}
+
+.main {
+    display:flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px;
+    background-color: #003B46;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    gap: 16px   ;
+}
+
+.welcomeDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.welcomeTitle {
+    font-size: 43px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+
+.welcomeDescription {
+    width: 850px;
+    font-size: 34px;
+    color: #919191;
+    text-align: center
+}
+
+.linkToReg {    
+    font-size: 43px;
+    color: #C4DFE6;
+    font-weight: light;
+}
+
+.home{
+    width: 100vw;
+    height: 100vh;
+}
+
+.entry{
+    width: 490px;
+    border-radius: 1234px;
+    background-color: #66A5AD;
+    height: 52px;
+    display: flex;
+    padding-left: 24px;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 24px;
+    color: #F2F2F2;
+}
+
+.entry::placeholder{
+    color: #F2F2F2;
+}
+
+.userAvatar{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 28px; 
+}
+
+.parentElement{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+} 
+
+.filterDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 723px;
+    height: 40px;
+    background-color: #07575B;
+    border-radius: 12px;
+}
+
+.filterText{
+    font-size: 24px;
+    color: white;
+}
+
+.likes{
+    width: 69px;
+    height: 32px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #66A5AD;
+    color: white;
+}
+
+.tags{
+    width: 69px;
+    height: 32px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #66A5AD;
+    color: white;
+}
+
+.post{
+    width: 723px;
+    min-height: 436px;
+    background-color: #07575B;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerPost{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    gap:9px;
+}
+
+.userAvatar{
+    width: 50px;
+    height: 50px;
+}
+
+.createdByName{
+    color: white;
+    font-size: 18px;
+}
+
+.likesCount{
+    font-size: 20px;
+    margin-left: 567px;
+}
+
+.mainPost{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.mainPost p{
+    margin: 0;
+    color: white;
+}
+
+.title{
+    font-size: 18px;
+}
+
+.description{
+    font-size: 15px;
+}
+
+.footerPost{
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.footerPost p{
+    color: #500805;
+}
+
+.likeImage{
+    width: 25px;
+    height: 25px;
+    margin-left: -7px;
+}
+
+.tripleDots{
+    width:20px;
+    height: 20px;
+    margin-left: 23px;
+}
+
+.postImage{
+    width: 182px;
+    height: 243px;
+    margin-top: 21px;
+    margin-left: 16px;
+}
+
+.allPosts{
+    height: 593px;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
+}
+
+
+.addPost{
+    width: 723px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 47px;
+    color: white;
+    border-radius: 12px;
+    background-color: #07575B;
+}
