@@ -1,6 +1,6 @@
 import styles from "./homeWithTags.module.css"
-import {IPost, posts} from "./Home-types"
-import { Post } from "./Post"
+import {IPost, posts} from "../Home-types"
+import { Post } from "../Post/Post"
 
 export function Posts(){
     return( 

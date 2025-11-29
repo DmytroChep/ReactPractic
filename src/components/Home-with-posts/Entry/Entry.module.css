@@ -1,0 +1,16 @@
+.entry{
+    width: 490px;
+    border-radius: 1234px;
+    background-color: #66A5AD;
+    height: 52px;
+    display: flex;
+    padding-left: 24px;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 24px;
+    color: #F2F2F2;
+}
+
+.entry::placeholder{
+    color: #F2F2F2;
+}

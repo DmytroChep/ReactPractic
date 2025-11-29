@@ -107,6 +107,7 @@ html, body, #root {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-sizing: border-box;
     gap: 5px;
     width: 723px;
     height: 40px;
@@ -124,10 +125,21 @@ html, body, #root {
     height: 32px;
     border-radius: 11px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
     background-color: #66A5AD;
     color: white;
+    gap: -4px;
+    padding-top: 8.5px;
+    padding-left: 17px;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+.likes p {
+    width: 25px;
+    height: 15px;
+    margin: 0;
 }
 
 .tags{
@@ -135,10 +147,21 @@ html, body, #root {
     height: 32px;
     border-radius: 11px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    box-sizing: border-box;
+    gap: -4px;
+    align-items: start;
+    justify-content: start;
+    padding-top: 8.5px;
+    padding-left: 17px;
     background-color: #66A5AD;
     color: white;
+    z-index: 10;
+}
+
+.tags p {
+    width: 25px;
+    height: 15px;
+    margin: 0;
 }
 
 .post{
@@ -248,4 +271,15 @@ html, body, #root {
     color: white;
     border-radius: 12px;
     background-color: #07575B;
+}
+
+.arrowBtn{
+    width: 26px;
+    height: 26px;
+}
+
+.expanded{
+    width: 113px;
+    height: 109px;
+    margin-top: 77px;
 }

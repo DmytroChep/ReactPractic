@@ -1,0 +1,24 @@
+.allPosts{
+    height: 593px;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.allPosts::-webkit-scrollbar {
+  display: none;
+}
+
+.addPost{
+    width: 723px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 47px;
+    color: white;
+    border-radius: 12px;
+    background-color: #07575B;
+}

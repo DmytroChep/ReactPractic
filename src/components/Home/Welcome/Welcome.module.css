@@ -1,0 +1,24 @@
+.welcomeDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.welcomeTitle {
+    font-size: 43px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+.welcomeDescription {
+    width: 850px;
+    font-size: 34px;
+    color: #919191;
+    text-align: center
+}
+.linkToReg {    
+    font-size: 43px;
+    color: #C4DFE6;
+    font-weight: light;
+}

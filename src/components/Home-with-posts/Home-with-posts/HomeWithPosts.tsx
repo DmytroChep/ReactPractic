@@ -1,7 +1,7 @@
-import { Entry } from "./Entry";
-import { HomeHeader } from "./Home-Header";
-import { HomeWithPostsProps } from "./Home-types";
-import { HomeMain } from "./HomeMainPosts";
+import { Entry } from "../Entry/Entry";
+import { HomeHeader } from "../Header/Home-Header";
+import { HomeWithPostsProps } from "../Home-types";
+import { HomeMain } from "../Main/HomeMainPosts";
 import styles from "./homeWithTags.module.css"
 
 export function HomeWithPosts(){

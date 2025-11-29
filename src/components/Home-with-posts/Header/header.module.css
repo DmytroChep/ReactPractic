@@ -1,0 +1,37 @@
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #003B46;
+    height: 77px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 28px;
+    padding-right: 28px;
+    border-bottom: 1px solid #929292;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 120px;
+    height: 53px;
+    box-sizing: border-box;
+}
+
+
+.userAvatar{
+    width: 50px;
+    height: 50px;
+}
+
+.userAvatarsShell{
+    width: 120px;
+    display: flex;
+    justify-content: end;
+}

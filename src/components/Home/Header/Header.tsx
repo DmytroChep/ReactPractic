@@ -1,5 +1,5 @@
-import  styles  from "./home.module.css"
-import image from "./images/image.png"
+import  styles  from "./Header.module.css"
+import image from "../../../images/image.png"
 
 export function Header() {
     return (<header className={styles.header}>

@@ -1,0 +1,141 @@
+.post{
+    width: 723px;
+    min-height: 436px;
+    background-color: #07575B;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.headerPost{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    border-bottom: 1px solid black;
+    padding-left: 10px;
+    gap:564px;
+    box-sizing: border-box;
+}
+
+.userAvatar{
+    width: 45px;
+    height: 45px;
+}
+
+.createdByName{
+    color: white;
+    font-size: 18px;
+}
+
+.likesCount{
+    font-size: 20px;
+ 
+}
+
+.mainPost{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.mainPost p{
+    margin: 0;
+    color: white;
+}
+
+.title{
+    font-size: 18px;
+}
+
+.description{
+    font-size: 15px;
+}
+
+.footerPost{
+    display: flex;
+    gap: 5px;
+    font-size: 15px;
+}
+
+.footerPost p{
+    color: #500805;
+}
+
+.likeImage{
+    width: 25px;
+    height: 25px;
+
+}
+
+.tripleDots{
+    width:20px;
+    height: 20px;
+
+}
+
+.postImage{
+    width: 182px;
+    height: 243px;
+
+}
+
+.allPosts{
+    height: 593px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
+}
+
+.allPosts::-webkit-scrollbar { 
+    display: none; 
+}
+
+.addPost{
+    width: 723px;
+    height: 77px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 47px;
+    color: white;
+    border-radius: 12px;
+    background-color: #07575B;
+}
+
+.arrowBtn{
+    width: 26px;
+    height: 26px;
+}
+
+.expanded{
+    width: 113px;
+    height: 109px;
+
+}
+
+.likesAndText{
+    display: flex;
+    align-items: center;
+}
+
+
+.firstHalfHeader{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.secondHalfHeader{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
