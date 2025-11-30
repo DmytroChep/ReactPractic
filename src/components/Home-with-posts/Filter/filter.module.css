@@ -1,8 +1,12 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 .filterDiv{
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
     gap: 5px;
     width: 723px;
     height: 40px;
@@ -26,7 +30,6 @@
     color: white;
     padding-top: 8.5px;
     padding-left: 17px;
-    box-sizing: border-box;
     z-index: 10;
 }
 
@@ -39,7 +42,6 @@
     height: 32px;
     border-radius: 11px;
     display: flex;
-    box-sizing: border-box;
     align-items: start;
     justify-content: start;
     padding-top: 8.5px;
