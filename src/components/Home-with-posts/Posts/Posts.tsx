@@ -9,8 +9,8 @@ export function Posts(){
                 <span>+</span>
             </div>
 
-            {posts.map((element: IPost) => {
-                return <Post postData={element}/>
+            {posts.map((element: IPost, idx: number) => {
+                return <Post key={idx} postData={element}/>
             })}
         </div>
     )

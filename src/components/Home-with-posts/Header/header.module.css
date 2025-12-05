@@ -3,33 +3,35 @@
     padding: 0;
     margin: 0;
 }
+
 .header {
     background-color: #003B46;
-    height: 77px;
-    width: 100%;
-    display: flex;
+    min-height: 77px;
+    min-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
-    padding-left: 28px;
-    padding-right: 28px;
+    justify-items: center;
+    padding: 0 28px;
     border-bottom: 1px solid #929292;
-    box-sizing: border-box;
+    gap: 20px;
 }
 
 .logo {
-    width: 120px;
-    height: 53px;
-    box-sizing: border-box;
+    max-width: 120px;
+    max-height: 53px;
+    justify-self: start;
 }
 
-
 .userAvatar{
-    width: 50px;
-    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
 }
 
 .userAvatarsShell{
-    width: 120px;
+    max-width: 120px;
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
+    justify-self: end;
 }
+

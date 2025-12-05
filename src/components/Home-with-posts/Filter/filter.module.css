@@ -4,99 +4,48 @@
     margin: 0;
 }
 .filterDiv{
-    display: flex;
+    width: min(92vw, 760px);
+    max-width: 760px;
+    height: auto;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
     align-items: center;
-    justify-content: center;
-    gap: 5px;
-    width: 723px;
-    height: 40px;
+    gap: 0.8rem;
     background-color: #07575B;
     border-radius: 12px;
+    padding: 0.5rem 0.6rem;
+    margin: 0 auto;
 }
 
 .filterText{
-    font-size: 24px;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     color: white;
+    justify-self: start;
 }
 
-.likes{
-    width: 69px;
-    height: 32px;
+.likes, .tags{
+    width: 100%;
+    height: 2.2rem;
     border-radius: 11px;
     display: flex;
-    align-items: start;
-    justify-content: start;
+    align-items: center;
+    justify-content: space-between;
     background-color: #66A5AD;
     color: white;
-    padding-top: 8.5px;
-    padding-left: 17px;
-    z-index: 10;
+    padding: 0 0.75rem;
+    cursor: pointer;
 }
 
-.likes p {
+.likes p, .tags p {
     margin: 0;
-}
-
-.tags{
-    width: 69px;
-    height: 32px;
-    border-radius: 11px;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    padding-top: 8.5px;
-    padding-left: 17px;
-    background-color: #66A5AD;
-    color: white;
-    z-index: 10;
-}
-
-.tags p {
-    margin: 0;
-}
-
-
-
-.tripleDots{
-    width:20px;
-    height: 20px;
-    margin-left: 23px;
-}
-
-.postImage{
-    width: 182px;
-    height: 243px;
-}
-
-.allPosts{
-    height: 593px;
-    overflow-y: scroll;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-direction: column;
-}
-
-
-.addPost{
-    width: 723px;
-    height: 77px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 47px;
-    color: white;
-    border-radius: 12px;
-    background-color: #07575B;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
 }
 
 .arrowBtn{
-    width: 26px;
-    height: 26px;
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
 .expanded{
-    width: 113px;
-    height: 109px;
-
+    min-height: 6.5rem;
 }

@@ -4,50 +4,56 @@
     margin: 0;
 }
 
+/* card-like post: responsive max width and grid layout */
 .post{
-    width: 723px;
-    min-height: 436px;
+    width: 100%;
+    max-width: 720px;
     background-color: #07575B;
     border-radius: 15px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.6rem;
+    padding: 0.6rem;
 }
 
+/* header with two columns: user info and actions */
 .headerPost{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
     width: 100%;
-    height: 52px;
-    border-bottom: 1px solid black;
-    padding-left: 10px;
-    gap:564px;
-    box-sizing: border-box;
+    height: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    padding: 0 0.5rem;
 }
 
+/* user avatar sizing */
 .userAvatar{
-    width: 45px;
-    height: 45px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
 }
 
+/* creator name */
 .createdByName{
     color: white;
-    font-size: 18px;
+    font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+    margin-left: 0.6rem;
+    align-self: center;
 }
 
-.likesCount{
-    font-size: 20px;
- 
-}
-
-.mainPost{
-    width: 100%;
-    height: 100%;
+/* right side: likes + actions aligned */
+.secondHalfHeader{
     display: flex;
-    flex-direction: column;
-    gap: 4px;
-    box-sizing: border-box;
-    padding-left: 10px;
-    padding-top: 10px;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* main content stacked */
+.mainPost{
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
 }
 
 .mainPost p{
@@ -55,93 +61,73 @@
     color: white;
 }
 
+/* title and description sizes */
 .title{
-    font-size: 18px;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-weight: 600;
 }
 
 .description{
-    font-size: 15px;
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    color: #E6F0F0;
+    line-height: 1.4;
 }
 
+/* tags footer */
 .footerPost{
     display: flex;
-    gap: 5px;
-    font-size: 15px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    padding: 0 0.5rem 0.6rem;
 }
 
 .footerPost p{
-    color: #500805;
+    color: #FFD7D7;
+    background: rgba(0,0,0,0.08);
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
 }
 
+/* images and icons responsive */
 .likeImage{
-    width: 25px;
-    height: 25px;
-
+    width: 1.4rem;
+    height: 1.4rem;
 }
 
 .tripleDots{
-    width:20px;
-    height: 20px;
-
+    width:1.1rem;
+    height: 1.1rem;
 }
 
 .postImage{
-    width: 182px;
-    height: 243px;
-
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 8px;
+    justify-self: start;
 }
 
-.allPosts{
-    height: 593px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    flex-direction: column;
-}
-
-.allPosts::-webkit-scrollbar { 
-    display: none; 
-}
-
-.addPost{
-    width: 723px;
-    height: 77px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 47px;
-    color: white;
-    border-radius: 12px;
-    background-color: #07575B;
-}
-
+/* helper sizes */
 .arrowBtn{
-    width: 26px;
-    height: 26px;
+    width: 1.6rem;
+    height: 1.6rem;
 }
 
 .expanded{
-    width: 113px;
-    height: 109px;
-
+    width: 6.5rem;
+    height: 7rem;
 }
 
 .likesAndText{
     display: flex;
     align-items: center;
+    gap: 0.4rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
 }
-
 
 .firstHalfHeader{
     display: flex;
     align-items: center;
-    gap: 4px;
-}
-
-.secondHalfHeader{
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    gap: 0.5rem;
 }
