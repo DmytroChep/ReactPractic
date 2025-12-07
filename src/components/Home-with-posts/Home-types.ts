@@ -12,6 +12,12 @@ export interface HomeWithPostsProps{
     posts: IPost[];
 }
 
+export interface IHeaderProps{
+    
+}
+
+
+
 export interface ITag {
     id?: number;
     name: string;

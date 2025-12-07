@@ -1,12 +1,14 @@
 import { Filter } from "../Filter/FIlter"
-import { tags } from "../Home-types"
+import { IPost, posts, tags } from "../Home-types"
 import  styles from "./homeMain.module.css"
 import { Posts } from "../Posts/Posts"
+import { useState } from "react"
 
 
-export function HomeMain() {
+export function HomeMain(props: {filteredPosts: IPost[]}) {
+    const {filteredPosts} = props
     return (<main className={styles.main}>
             <Filter tags={tags}/>
-            <Posts/>
+            <Posts filteredPosts={filteredPosts}/>
         </main>)
 }
