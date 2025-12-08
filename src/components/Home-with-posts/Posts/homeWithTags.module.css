@@ -4,7 +4,6 @@
     margin: 0;
 }
 
-/* container for all posts: responsive width and grid layout with invisible scroll */
 .allPosts{
     width: min(92vw, 760px);
     max-width: 760px;
@@ -19,7 +18,7 @@
     justify-items: center;
 }
 
-/* hide scrollbar but keep scrolling functional */
+
 .allPosts::-webkit-scrollbar {
   width: 0;
 }
@@ -28,7 +27,7 @@
   scrollbar-width: none;
 }
 
-/* "+" add-post tile: responsive */
+
 .addPost{
     width: 100%;
     height: 5.5rem;
