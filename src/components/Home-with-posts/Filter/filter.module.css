@@ -24,16 +24,23 @@
 }
 
 .likes, .tags{
-    width: 100%;
+    width: 5rem;
     height: 2.2rem;
     border-radius: 11px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: start;
     background-color: #66A5AD;
-    color: white;
-    padding: 0 0.75rem;
+    color: #F2F2F2;
+    padding: 0.60em 0.75rem;
     cursor: pointer;
+    overflow: hidden;
+    gap: 0.4em; 
+}
+
+.alwaysShowData{
+    display: flex;
+    justify-content: space-between;
 }
 
 .likes p, .tags p {
@@ -46,6 +53,43 @@
     height: 1.4rem;
 }
 
-.expanded{
-    min-height: 6.5rem;
+.likes:hover, .tags:hover{
+    min-height: 10rem;
+    min-width: 15rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+
+.findTagInput{
+    height: 3em;
+    border: 0;
+    border-radius: 1234px;
+    background-color: #578793;
+    padding-left: 1rem;
+    color: #F2F2F2;
+}
+
+
+.findTagInput::placeholder{
+    color: #F2F2F2; 
+}
+
+.TagsDiv{
+    width: 100%;
+    background-color: #578793;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    border-radius: 10px;
+    
+}
+
+.tag{
+    display: flex;
+    gap: 1.5px;
+    padding-left: 3px;
+    align-items: center;
+    width: 65px;
 }

@@ -10,9 +10,9 @@ export function Entry(props: {find: string, setFilteredPosts: React.Dispatch<Rea
     useEffect(() => {
         setFilteredPosts(
             posts.filter((post) => {
-                return post.title.includes(inputText)
+                return post.title.includes(inputData)
             }))
-    }, [inputData])
+    }, [inputData, setFilteredPosts])
 
     return (
         <input className = {styles.entry} placeholder={inputText} value={inputData} onChange={(event) => {

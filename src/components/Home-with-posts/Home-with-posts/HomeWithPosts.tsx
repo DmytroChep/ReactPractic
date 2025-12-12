@@ -11,7 +11,7 @@ export function HomeWithPosts(){
     return (
         <div className={styles.parentElement}>
             <HomeHeader setFitleredPosts={setfilteredPosts}/>
-            <HomeMain filteredPosts={filteredPosts}/>
+            <HomeMain filteredPosts={filteredPosts} setFitleredPosts={setfilteredPosts}/>
         </div>
     )
 }
