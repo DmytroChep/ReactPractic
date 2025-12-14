@@ -1,4 +1,4 @@
-import { Header } from "../Header/Header";
+import { Header } from "../../../app/Header/Home-Header";
 import { Main } from "../Main/Main";
 import { Welcome } from "../Welcome/Welcome";
 import styles from "./Home.module.css"

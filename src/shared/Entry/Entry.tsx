@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import styles from "./Entry.module.css"
-import { IPost, posts } from "../Home-types"
+import { IPost, posts } from "../../components/Home-with-posts/Home-types"
+import { IEntryProps } from "./entry.types"
 
-export function Entry(props: {find: string, setFilteredPosts: React.Dispatch<React.SetStateAction<IPost[]>>}) {
+export function Entry(props: IEntryProps) {
     const inputText = `Find ${props.find}`
     const [inputData, setInputData] = useState<string>("")
     const {setFilteredPosts} = props

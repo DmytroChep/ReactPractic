@@ -1,0 +1,2 @@
+export { HomeWithPosts } from "./HomeWithPosts";
+
