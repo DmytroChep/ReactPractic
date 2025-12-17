@@ -33,9 +33,9 @@
     background-color: #66A5AD;
     color: #F2F2F2;
     padding: 0.60em 0.75rem;
-    cursor: pointer;
     overflow: hidden;
     gap: 0.4em; 
+    scroll-snap-align: start;
 }
 
 .alwaysShowData{
@@ -92,4 +92,8 @@
     padding-left: 3px;
     align-items: center;
     width: 65px;
+}
+
+.tag input{
+    cursor: pointer;
 }

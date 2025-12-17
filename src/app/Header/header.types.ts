@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { IPost } from "../../components/Home-with-posts/Home-types";
+import { IPost } from "../../components/Post/post-types";
 
 export interface IHeader{
     setFitleredPosts?: (posts: IPost[]) => void, 

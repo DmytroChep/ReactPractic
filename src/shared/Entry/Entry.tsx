@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styles from "./Entry.module.css"
-import { IPost, posts } from "../../components/Home-with-posts/Home-types"
 import { IEntryProps } from "./entry.types"
+import { posts } from "../types"
 
 export function Entry(props: IEntryProps) {
     const inputText = `Find ${props.find}`

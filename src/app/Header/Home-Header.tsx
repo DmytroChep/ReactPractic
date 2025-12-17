@@ -1,5 +1,4 @@
 import  styles from "./header.module.css"
-import { IPost, posts } from "../../components/Home-with-posts/Home-types"
 import { ReactNode } from "react"
 import { IHeader } from "./header.types"
 import { IMAGES } from "../../shared/images"

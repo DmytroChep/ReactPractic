@@ -1,27 +1,6 @@
-export interface IPost {
-    id?: number;
-    title: string;
-    description: string;
-    image: string;
-    likesCount: number;
-    createdById: number;
-    tags?: ITag[];
-}
+import { ITag } from "../components/Filter/filter-types"
+import { IPost } from "../components/Post/post-types"
 
-export interface HomeWithPostsProps{
-    posts: IPost[];
-}
-
-export interface IHeaderProps{
-    
-}
-
-
-
-export interface ITag {
-    id?: number;
-    name: string;
-}
 export const tags: ITag[] = [
     {
         id: 1,
@@ -29,15 +8,27 @@ export const tags: ITag[] = [
     },
     {
         id: 2,
-        name: "nature"
+        name: "nature2"
     },
     {
         id: 3,
-        name: "nature"
+        name: "nature3"
     },
     {
         id: 4,
-        name: "nature"
+        name: "nature4"
+    },
+    {
+        id: 4,
+        name: "nature5"
+    },
+    {
+        id: 4,
+        name: "nature6"
+    },
+    {
+        id: 4,
+        name: "nature7"
     },
 ]
 export const posts: IPost[] = [
@@ -69,3 +60,5 @@ export const posts: IPost[] = [
         tags: [tags[1]]
     }
 ]
+
+export const isLogin = true

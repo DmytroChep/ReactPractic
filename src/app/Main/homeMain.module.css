@@ -4,7 +4,7 @@
     margin: 0;
 }
 
-.main {
+/* .main {
     display: grid;
     grid-template-rows: auto 1fr;
     justify-items: center;
@@ -14,4 +14,4 @@
     width: 100%;
     gap: 1rem;
     overflow: visible;
-}
+} */

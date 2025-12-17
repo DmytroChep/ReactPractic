@@ -1,6 +1,6 @@
 import styles from "./homeWithTags.module.css"
-import {IPost, posts} from "../Home-types"
 import { Post } from "../Post/Post"
+import { IPost } from "../Post/post-types"
 
 export function Posts(props: {filteredPosts: IPost[]}){
     const {filteredPosts} = props

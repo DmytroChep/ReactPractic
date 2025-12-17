@@ -1,11 +1,25 @@
-import { useState } from "react"
-import { ITag, tags } from "../Home-types"
+import { useEffect, useState } from "react"
 import styles from "./filter.module.css"
-import arrow from "../../../images/arrow.png"
+import { tags } from "../../shared/types"
+import { ITag } from "./filter-types"
+import { IMAGES } from "../../shared/images"
 
-export function Filter(props: {tags: ITag[]}){
+export function Filter(){
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
+
+    const [inputData, setInputData] = useState<string>("")
+    const [choosedTags, setTags] = useState<ITag[]>(tags)
+
+    // const [choosedTags, setChoosedTags] = useState<ITag[]>([])
+
+    useEffect(() => {
+        setTags(
+            tags.filter((tag) => {
+                return tag.name.includes(inputData)
+            })
+        )
+    }, [inputData, setInputData])
 
     const filterLikesOnClick = () => {
         setIsLikesExpanded(!isLikesExpanded)    
@@ -22,13 +36,15 @@ export function Filter(props: {tags: ITag[]}){
             <div className={`${styles.likes} ${isLikesExpanded ? styles.expanded : ''}`} onClick={filterLikesOnClick}>
                 <div className={styles.alwaysShowData}>
                     <p>likes</p>
-                    <img src={arrow} className={styles.arrowBtn} alt="" />
+                    <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
                 <hr />
-                <input type="text" placeholder="find tag" className={styles.findTagInput} />
+                <input type="text" value={inputData} placeholder="find tag" className={styles.findTagInput} onChange={(event) => {
+                    setInputData(event.target.value)
+                }}/>
                 <div className={styles.TagsDiv}>
                     {
-                        tags.map((element) => {
+                        choosedTags.map((element) => {
                             return (<div className={styles.tag}>
                                 <input type="checkbox" />
                                 <p className={styles.tagName}>{element.name}</p>
@@ -41,7 +57,7 @@ export function Filter(props: {tags: ITag[]}){
             <div className={`${styles.tags} ${isTagsExpanded ? styles.expanded : ''}`} onClick={filterTagsOnClick}>
                 <div className={styles.alwaysShowData}>
                     <p>tags</p>
-                    <img src={arrow} className={styles.arrowBtn} alt="" />
+                    <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
             </div>
         </div>

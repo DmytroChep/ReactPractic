@@ -12,3 +12,9 @@
     background-color: #003B46;
     overflow: hidden;
 }
+
+.main{
+    display: flex;
+    padding-top: 14px;
+    flex-direction: column;
+}
