@@ -6,12 +6,14 @@ import { Header } from "../../app/Header/Home-Header";
 import { Entry } from "../../shared/Entry";
 import { IPost } from "../../components/Post/post-types";
 import { Main } from "../../app/Main";
-import { isLogin, posts } from "../../shared/types";
+import { isLogin } from "../../shared/types";
 import { Welcome } from "../../components/Welcome/Welcome";
+import { usePosts } from "../../hooks/use-posts";
 
 
 export function HomePage(){
-    const [filteredPosts, setfilteredPosts] = useState<IPost[]>(posts)
+    
+    const [filteredPosts, setfilteredPosts] = useState<IPost[]>(usePosts())
 
     function setFilteredPostsFunc(posts: IPost[]){
         setfilteredPosts(posts)

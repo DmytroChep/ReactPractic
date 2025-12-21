@@ -31,34 +31,6 @@ export const tags: ITag[] = [
         name: "nature7"
     },
 ]
-export const posts: IPost[] = [
-    {
-        id: 1,
-        title: "hello", 
-        description: "my first post",
-        image: "https://image.png",
-        likesCount: 123,
-        createdById: 1,
-        tags: [tags[0], tags[2]]
-    },
-    {
-        id: 2,
-        title: "helloo",
-        description: "my first posttt",
-        image: "https://image.png",
-        likesCount: 123,
-        createdById: 1,
-        tags: [tags[3], tags[2]]
-    },
-    {
-        id: 3,
-        title: "hellooo",
-        description: "my first postttt",
-        image: "https://image.png",
-        likesCount: 123,
-        createdById: 1,
-        tags: [tags[1]]
-    }
-]
+
 
 export const isLogin = true

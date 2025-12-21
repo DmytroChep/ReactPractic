@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import styles from "./Entry.module.css"
 import { IEntryProps } from "./entry.types"
-import { posts } from "../types"
+import { IPost } from "../../components/Post/post-types"
+import { usePosts } from "../../hooks/use-posts"
 
 export function Entry(props: IEntryProps) {
     const inputText = `Find ${props.find}`
     const [inputData, setInputData] = useState<string>("")
     const {setFilteredPosts} = props
+    const posts: IPost[] = usePosts()
     
     useEffect(() => {
         setFilteredPosts(
