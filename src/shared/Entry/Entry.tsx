@@ -8,7 +8,7 @@ export function Entry(props: IEntryProps) {
     const inputText = `Find ${props.find}`
     const [inputData, setInputData] = useState<string>("")
     const {setFilteredPosts} = props
-    const posts: IPost[] = usePosts()
+    const posts: IPost[] = usePosts().posts
     
     useEffect(() => {
         setFilteredPosts(

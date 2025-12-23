@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react"
 import styles from "./filter.module.css"
-import { tags } from "../../shared/types"
 import { ITag } from "./filter-types"
 import { IMAGES } from "../../shared/images"
+import { useTags } from "../../hooks/use-tags"
 
 export function Filter(){
+    const tags = useTags()
+
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
 
@@ -12,6 +14,11 @@ export function Filter(){
     const [choosedTags, setTags] = useState<ITag[]>(tags)
 
     // const [choosedTags, setChoosedTags] = useState<ITag[]>([])
+    
+
+    useEffect(() => {
+        setTags(tags)
+    }, [tags])
 
     useEffect(() => {
         setTags(
@@ -35,7 +42,7 @@ export function Filter(){
 
             <div className={`${styles.likes} ${isLikesExpanded ? styles.expanded : ''}`} onClick={filterLikesOnClick}>
                 <div className={styles.alwaysShowData}>
-                    <p>likes</p>
+                    <p>tags</p>
                     <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
                 <hr />
@@ -56,7 +63,7 @@ export function Filter(){
             
             <div className={`${styles.tags} ${isTagsExpanded ? styles.expanded : ''}`} onClick={filterTagsOnClick}>
                 <div className={styles.alwaysShowData}>
-                    <p>tags</p>
+                    <p>likes</p>
                     <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
             </div>

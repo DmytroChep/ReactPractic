@@ -9,11 +9,14 @@ import { Main } from "../../app/Main";
 import { isLogin } from "../../shared/types";
 import { Welcome } from "../../components/Welcome/Welcome";
 import { usePosts } from "../../hooks/use-posts";
+import { FourSquare } from "react-loading-indicators";
 
 
 export function HomePage(){
     
-    const [filteredPosts, setfilteredPosts] = useState<IPost[]>(usePosts())
+    const {posts, isLoaded} = usePosts()
+    const [filteredPosts, setfilteredPosts] = useState<IPost[]>(posts)
+    
 
     function setFilteredPostsFunc(posts: IPost[]){
         setfilteredPosts(posts)
@@ -29,7 +32,11 @@ export function HomePage(){
                 isLogin ? (
                     <div className={styles.main}>
                             <Filter/>
-                            <Posts filteredPosts={filteredPosts}/>
+                            {isLoaded ? (<Posts filteredPosts={filteredPosts} />) : 
+                            (<div className={styles.loadingShell}>
+                            <FourSquare color="white" size="medium" text="" textColor="" />
+                            </div>)}
+                            
                     </div>
                 ): <Welcome/>
             }
