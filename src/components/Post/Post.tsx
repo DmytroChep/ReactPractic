@@ -3,6 +3,7 @@ import { IPost } from "./post-types"
 import { IMAGES } from "../../shared/images"
 
 export function Post(props: {postData: IPost}){
+    console.log(props.postData)
     return( 
         <div className={styles.post}>
             <div className={styles.headerPost}>

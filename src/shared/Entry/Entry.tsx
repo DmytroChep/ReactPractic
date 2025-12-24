@@ -15,7 +15,7 @@ export function Entry(props: IEntryProps) {
             posts.filter((post) => {
                 return post.title.includes(inputData)
             }))
-    }, [inputData, setFilteredPosts])
+    }, [inputData, posts])
 
     return (
         <input className = {styles.entry} placeholder={inputText} value={inputData} onChange={(event) => {
