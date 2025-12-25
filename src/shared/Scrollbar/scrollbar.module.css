@@ -1,0 +1,44 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.likesCard {
+    padding: 20px 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.likesText {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+}
+
+.scrollbarCenterer {
+    display: flex;
+    justify-content: center;
+}
+
+.trackHorizontal {
+    position: absolute;
+    height: 15px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); 
+    border-radius: 10px;
+}
+
+.thumbHorizontal {
+    border-radius: 50% !important; /* Или 10px */
+    width: 15px !important; /* Фиксированная ширина сделает его кругом */
+    height: 100%;
+    background-color: #7a8a8b;
+    position: relative;
+    display: block;
+}

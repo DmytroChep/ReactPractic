@@ -3,13 +3,13 @@ import { IPost } from "./post-types"
 import { IMAGES } from "../../shared/images"
 
 export function Post(props: {postData: IPost}){
-    console.log(props.postData)
+
     return( 
         <div className={styles.post}>
             <div className={styles.headerPost}>
                 <div className={styles.firstHalfHeader}>
                     <img src={IMAGES.profile} className={styles.userAvatar} alt="" />
-                    <p className={styles.createdByName}>{props.postData.createdById}</p>
+                    <p className={styles.createdByName}>{props.postData.createdBy.firstName}</p>
                 </div>
                 <div className={styles.secondHalfHeader}>
                     <div className={styles.likesAndText}>

@@ -3,17 +3,24 @@ import styles from "./filter.module.css"
 import { ITag } from "./filter-types"
 import { IMAGES } from "../../shared/images"
 import { useTags } from "../../hooks/use-tags"
+import { ScrollBar } from "../../shared/Scrollbar"
+import { IPost } from "../Post/post-types"
 
-export function Filter(){
+export function Filter(props: {
+    setValue: (value:number) => void, 
+    value: number, 
+    setFilteredPosts: (posts: IPost[]) => void, 
+    setChoosedTags: (tags: ITag[]) => void,
+    posts: IPost[]},
+){
     const tags = useTags()
+    const {setValue, value, setFilteredPosts, posts} = props
 
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
 
     const [inputData, setInputData] = useState<string>("")
     const [choosedTags, setTags] = useState<ITag[]>(tags)
-
-    // const [choosedTags, setChoosedTags] = useState<ITag[]>([])
     
 
     useEffect(() => {
@@ -52,7 +59,7 @@ export function Filter(){
                 <div className={styles.TagsDiv}>
                     {
                         choosedTags.map((element) => {
-                            return (<div className={styles.tag}>
+                            return (<div key={element.id} className={styles.tag}>
                                 <input type="checkbox" />
                                 <p className={styles.tagName}>{element.name}</p>
                             </div>)
@@ -66,6 +73,7 @@ export function Filter(){
                     <p>likes</p>
                     <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
+                <ScrollBar setValue={setValue} value={value} setFilteredPosts= {setFilteredPosts} filteredPosts= {posts}/>
             </div>
         </div>
     )

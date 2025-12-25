@@ -32,5 +32,13 @@ export const tags: ITag[] = [
     },
 ]
 
-
+export interface IUser {
+  id: number,
+  firstName: string,
+  secondName: string,
+  email: string,
+  avatar: string,
+  password: string,
+  isAdmin: boolean
+}
 export const isLogin = true
