@@ -23,7 +23,7 @@ export function ScrollBar(props: {
             const result = allPosts.filter((post) => post.likesCount >= value);
             setFilteredPosts(result);
         }
-    }, [value, allPosts, setFilteredPosts]);    
+    }, [value, allPosts]);    
 
     const handleUpdate = (values: any) => {
         if (values && typeof values.left === 'number') {
