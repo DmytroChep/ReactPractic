@@ -6,13 +6,13 @@
 
 .post{
     width: 100%;
-    max-width: 720px;
     background-color: #07575B;
     border-radius: 15px;
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 0.6rem;
     padding: 0.6rem;
+    min-width: 720px;
 }
 
 

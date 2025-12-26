@@ -1,4 +1,5 @@
 import { IUser } from "../../shared/types";
+import { IComment } from "../Comments/comments.types";
 import { ITag } from "../Filter/filter-types";
 
 export interface IPost {    
@@ -9,5 +10,6 @@ export interface IPost {
     likesCount: number;
     createdBy: IUser;
     tags?: ITag[];
+    comments?: IComment[];
 }
 

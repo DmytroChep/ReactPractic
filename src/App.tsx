@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Layout } from "./app/Layout/layout";
 import { HomePage } from "./pages/Home";
+import { PostPage } from "./pages/onePostPage";
 
 export function App(){
     return(
@@ -8,6 +9,7 @@ export function App(){
             <Routes>
                 <Route path="/" element= {<Layout />}>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/post/:id/" element={<PostPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>
