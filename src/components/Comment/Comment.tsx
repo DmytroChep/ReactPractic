@@ -10,7 +10,9 @@ export function Comment(props: {commentData: IComment}){
                 <img src={commentData.user.avatar} className={styles.userAvatar} />
                 <p className={styles.username}>{commentData.user.firstName}</p>
             </div>
-            <p>{commentData.body}</p>
+            <div dangerouslySetInnerHTML={{ __html: commentData.body }}>
+            
+            </div>
         </div>
     )
-}
+}   

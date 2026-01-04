@@ -12,7 +12,7 @@ export function usePosts() {
                 setIsLoaded(false)
                 const response = await fetch(`http://127.0.0.1:8000/posts`);
                 const data = await response.json();
-                setPosts(data); 
+                setPosts(data.reverse()); 
             } catch (error) {
                 console.error("Failed to fetch posts:", error);
             } finally{

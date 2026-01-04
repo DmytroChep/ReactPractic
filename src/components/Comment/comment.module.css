@@ -1,12 +1,13 @@
 .comment{
     display: flex;
-    height: 67px;
     background-color: #07575B;
     border-radius: 10px;
     color: white;
     align-items: center;
     gap: 10px;
     padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .userData{

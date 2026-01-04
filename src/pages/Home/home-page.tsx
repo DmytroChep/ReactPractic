@@ -24,12 +24,12 @@ export function HomePage(){
     function setValueFunc(value: number){
         setValue(value)
     }
-
+    console.log(choosedTags)
     function setFilteredPostsFunc(posts: IPost[]){
         setfilteredPosts(posts)
     }
-    function setTags(tags: ITag[]){
-        setTags(choosedTags)
+    function setTagsFunc(tags: ITag[]){
+        setChoosedTags(tags)
     }
 
 
@@ -46,7 +46,7 @@ export function HomePage(){
                             <Filter setValue={setValueFunc} 
                             value={value} setFilteredPosts= {setFilteredPostsFunc} 
                             posts={filteredPosts}
-                            setChoosedTags= {setTags}/>
+                            setChoosedTags= {setTagsFunc}/>
                             {isLoaded ? (<Posts filteredPosts={filteredPosts}/>) : 
                             (<div className={styles.loadingShell}>
                             <FourSquare color="white" size="medium" text="" textColor="" />

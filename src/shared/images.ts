@@ -1,15 +1,22 @@
 import image from "../assets/image.png"
 import arrow from "../assets/arrow.png"
 import cat from "../assets/cat.png"
-import like from "../assets/like.png"
 import profile from "../assets/profile.png"
 import threeDots from "../assets/threeDots.png"
+import send from "../assets/send.png"
+import { ReactComponent as like } from '../assets/like.svg';
+import { ReactComponent as filledLike } from '../assets/filledLike.svg';
 
 export const IMAGES = {
     image: image,
     arrow: arrow,
     cat: cat,
-    like: like,
     profile: profile,
-    threeDots: threeDots
+    threeDots: threeDots,
+    send: send
 }
+export const ICONS = {
+    like: like,
+    filledLike: filledLike
+}
+

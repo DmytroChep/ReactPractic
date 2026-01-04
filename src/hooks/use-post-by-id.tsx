@@ -9,7 +9,7 @@ export function usePostById(postId: number){
     useEffect(() => {
             async function getPost(){
             try{
-                const response = await fetch(`http://127.0.0.1:8000/posts/${postId}?include=likedBy&include=comments`)
+                const response = await fetch(`http://127.0.0.1:8000/posts/${postId}/postWithRels`)
             if (!response.ok) {
                 const errorData = await response.json();
                 throw new Error(errorData.message || "server error");

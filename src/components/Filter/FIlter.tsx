@@ -14,7 +14,7 @@ export function Filter(props: {
     posts: IPost[]},
 ){
     const tags = useTags()
-    const {setValue, value, setFilteredPosts, posts} = props
+    const {setValue, value, setFilteredPosts, posts, setChoosedTags} = props
 
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
@@ -28,11 +28,17 @@ export function Filter(props: {
     }, [tags])
 
     useEffect(() => {
-        setTags(
+        setChoosedTags(choosedTags)
+        console.log(choosedTags)
+    }, [choosedTags])
+
+    useEffect(() => {
+        setChoosedTags(
             tags.filter((tag) => {
                 return tag.name.includes(inputData)
             })
         )
+        console.log(choosedTags)    
     }, [inputData, setInputData])
 
     const filterLikesOnClick = () => {

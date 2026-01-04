@@ -26,7 +26,7 @@ export function PostPage(){
                 <div className={styles.main}>
                     <div className={styles.postAndComments}>
                         <Post postData={result} />
-                        <Comments comments={result.comments}/>
+                        <Comments comments={result.comments} postId= {Number(postId)}/>
                     </div>
                 </div>
             </Main>
