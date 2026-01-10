@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./homeWithTags.module.css"
 import { Filter } from "../../components/Filter/FIlter";
 import { Posts } from "../../components/Posts/Posts";
@@ -31,6 +31,10 @@ export function HomePage(){
     function setTagsFunc(tags: ITag[]){
         setChoosedTags(tags)
     }
+
+    useEffect(() => {
+        console.log(choosedTags)
+    }, [choosedTags])
 
 
     return (

@@ -13,28 +13,22 @@ export function Filter(props: {
     setChoosedTags: (tags: ITag[]) => void,
     posts: IPost[]},
 ){
-    const tags = useTags()
+    const allTags = useTags()
     const {setValue, value, setFilteredPosts, posts, setChoosedTags} = props
 
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
 
     const [inputData, setInputData] = useState<string>("")
-    const [choosedTags, setTags] = useState<ITag[]>(tags)
+    const [choosedTags, setTags] = useState<ITag[]>(allTags)
     
 
-    useEffect(() => {
-        setTags(tags)
-    }, [tags])
+
 
     useEffect(() => {
-        setChoosedTags(choosedTags)
         console.log(choosedTags)
-    }, [choosedTags])
-
-    useEffect(() => {
-        setChoosedTags(
-            tags.filter((tag) => {
+        setTags(
+            allTags.filter((tag) => {
                 return tag.name.includes(inputData)
             })
         )
@@ -66,7 +60,13 @@ export function Filter(props: {
                     {
                         choosedTags.map((element) => {
                             return (<div key={element.id} className={styles.tag}>
-                                <input type="checkbox" />
+                                <input type="checkbox" id={`${element.id}`} onChange={(tag) => {
+                                    tag.target.checked 
+                                    ? setChoosedTags(allTags.filter((filterTag)=> {
+                                        return filterTag.id !== element.id
+                                    }))
+                                    : setChoosedTags([...allTags, allTags[element.id]])
+                                }}/>
                                 <p className={styles.tagName}>{element.name}</p>
                             </div>)
                         })
