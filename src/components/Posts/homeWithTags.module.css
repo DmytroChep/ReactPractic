@@ -37,4 +37,18 @@
     color: white;
     border-radius: 12px;
     background-color: #07575B;
+    cursor: pointer;
+}
+
+
+.modal {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+  height: 400px;
+	top: 100%;
+	gap: 10px;
+	background-color: #ebe7e7;
+	padding: 10px;
+	
 }
