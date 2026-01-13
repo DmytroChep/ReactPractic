@@ -6,6 +6,8 @@ import threeDots from "../assets/threeDots.png"
 import send from "../assets/send.png"
 import { ReactComponent as like } from '../assets/like.svg';
 import { ReactComponent as filledLike } from '../assets/filledLike.svg';
+import { ReactComponent as cross } from '../assets/cross.svg';
+import { ReactComponent as success } from '../assets/check-mark.svg';
 
 export const IMAGES = {
     image: image,
@@ -15,8 +17,11 @@ export const IMAGES = {
     threeDots: threeDots,
     send: send
 }
+
 export const ICONS = {
     like: like,
-    filledLike: filledLike
+    filledLike: filledLike,
+    cross: cross,
+    success:success
 }
 

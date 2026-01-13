@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.post{
+    width: 100%;
+    max-height: 650px;
+    background-color: #07575B;
+    border-radius: 15px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 0.6rem;
+    padding: 0.6rem;
+    min-width: 720px;
+}
+
+
+.headerPost{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    padding: 0 0.5rem;
+}
+
+
+.userAvatar{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+
+.createdByName{
+    color: white;
+    font-size: clamp(0.85rem, 2.5vw, 1.05rem);
+    margin-left: 0.6rem;
+    align-self: center;
+}
+
+
+.secondHalfHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+
+.mainPost{
+    display: grid;
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+}
+
+.mainPost p{
+    margin: 0;
+    color: white;
+}
+
+
+.title{
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-weight: 600;
+}
+
+.description{
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    line-height: 1.4;
+}
+
+
+.footerPost{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: clamp(0.7rem, 2vw, 0.9rem);
+    padding: 0 0.5rem 0.6rem;
+}
+
+.footerPost p{
+    color: #FFD7D7;
+    background: rgba(0,0,0,0.08);
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
+}
+
+
+.likeImage{
+    width: 1.4rem;
+    height: 1.4rem;
+    cursor: pointer;
+}
+
+.tripleDots{
+    width:1.1rem;
+    height: 1.1rem;
+}
+
+.postImage{
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: 8px;
+    justify-self: start;
+}
+
+
+.arrowBtn{
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.expanded{
+    width: 6.5rem;
+    height: 7rem;
+}
+
+.likesAndText{
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+}
+
+.firstHalfHeader{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+}
+
+.tagCreation{
+    color: #500805;
+    background-color: #003B46;
+    border: 0;
+    font-size: 15px;
+    height: 31px;
+    width: 75px;
+    border-radius: 5px;
+}
+.headerButton{
+  background-color: #003B46;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

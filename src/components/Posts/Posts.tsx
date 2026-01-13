@@ -3,6 +3,8 @@ import { Post } from "../Post/Post"
 import { IPost } from "../Post/post-types"
 import { Modal } from "../../shared/Modal"
 import { useState } from "react"
+import { ICONS } from "../../shared/images"
+import { PostCreation } from "../Post-creation"
 
 
 export function Posts(props: {filteredPosts: IPost[]}){
@@ -21,13 +23,23 @@ export function Posts(props: {filteredPosts: IPost[]}){
 
 
             <Modal 
-			className={styles.modal} 
+            className=""
 			isOpen={isModalOpen} 
 			onClose={closeModal} 
-			doCloseOnOutsideClick={true}>
-                <div className={styles.headerModal}>
+			doCloseOnOutsideClick={false}>
+                <div className={styles.modal} >
+                    <div className={styles.headerModal}>
+                        <button className={`${styles.open} ${styles.headerButton}`} >
+                            <ICONS.success className={styles.crossImage}/>
+                        </button>
+                        <button className={`${styles.close} ${styles.headerButton}`} onClick={handleInputFocus}>
+                            <ICONS.cross className={styles.crossImage}/>
+                        </button>
+                    </div>
 
+                    <PostCreation />
                 </div>
+                
 			</Modal>
 
             {filteredPosts.map((element: IPost, idx: number) => {

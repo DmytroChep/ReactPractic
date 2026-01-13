@@ -29,26 +29,49 @@
 
 
 .addPost{
-    width: 100%;
-    height: 5.5rem;
-    display: grid;
-    place-items: center;
-    font-size: 3rem;
-    color: white;
-    border-radius: 12px;
-    background-color: #07575B;
-    cursor: pointer;
+  width: 100%;
+  height: 5.5rem;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  color: white;
+  border-radius: 12px;
+  background-color: #07575B;
+  cursor: pointer;
 }
 
 
 .modal {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-  height: 400px;
-	top: 100%;
-	gap: 10px;
-	background-color: #ebe7e7;
-	padding: 10px;
-	
+  width: 773px;
+  background-color: #07575B;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  height: 640px;
+  gap: 10px;
+}
+
+
+
+.headerButton{
+  background-color: #003B46;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  width: 31px;
+  height: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerModal{
+  display: flex;
+  width: 100%;
+  height: 57px;
+  align-items: center;
+  justify-content: end;
+  padding-right: 10px;
+  border-bottom: 2px solid black;
+  gap: 10px;
 }
