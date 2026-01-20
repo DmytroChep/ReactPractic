@@ -1,30 +1,31 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import styles from "./filter.module.css"
 import { ITag } from "./filter-types"
 import { IMAGES } from "../../shared/images"
 import { useTags } from "../../hooks/use-tags"
 import { ScrollBar } from "../../shared/Scrollbar"
 import { IPost } from "../Post/post-types"
+import { PostContext } from "../../context/post-context"
+import { LocalizationContext } from "../../context/localization-context"
 
 export function Filter(props: {
     setValue: (value:number) => void, 
     value: number, 
-    setFilteredPosts: (posts: IPost[]) => void, 
-    setChoosedTags: (tags: ITag[]) => void,
-    posts: IPost[]},
+    setChoosedTags: (tags: ITag[]) => void},
 ){
+    
     const allTags = useTags()
-    const {setValue, value, setFilteredPosts, posts, setChoosedTags} = props
-
+    const {setValue, value, setChoosedTags} = props
+    
     const [isLikesExpanded, setIsLikesExpanded] = useState(false)
     const [isTagsExpanded, setIsTagsExpanded] = useState(false)
-
+    
     const [inputData, setInputData] = useState<string>("")
     const [choosedTags, setTags] = useState<ITag[]>(allTags)
     
-
-
-
+    
+    
+    
     useEffect(() => {
         console.log(choosedTags)
         setTags(
@@ -34,26 +35,37 @@ export function Filter(props: {
         )
         console.log(choosedTags)    
     }, [inputData, setInputData])
-
+    
     const filterLikesOnClick = () => {
         setIsLikesExpanded(!isLikesExpanded)    
     }
-
+    
     const filterTagsOnClick = () => {
         setIsTagsExpanded(!isTagsExpanded)
     }
+    
+    const postData = useContext(PostContext);
+    const translateContext = useContext(LocalizationContext);
 
+    if (!postData) return null; 
+    const { filteredPosts, setFilteredPostsFunc } = postData;
+
+    if (!translateContext) return null; 
+    const { translate } = translateContext;
+
+    
+    
     return( 
         <div className={styles.filterDiv}>
-            <p className={styles.filterText}>filter by:</p>
+            <p className={styles.filterText}>{translate("Filter-filterBy")}</p>
 
             <div className={`${styles.likes} ${isLikesExpanded ? styles.expanded : ''}`} onClick={filterLikesOnClick}>
                 <div className={styles.alwaysShowData}>
-                    <p>tags</p>
+                    <p>{translate("Filter-tags")}</p>
                     <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
                 <hr />
-                <input type="text" value={inputData} placeholder="find tag" className={styles.findTagInput} onChange={(event) => {
+                <input type="text" value={inputData} placeholder={`${translate("Filter-findTag")}`} className={styles.findTagInput} onChange={(event) => {
                     setInputData(event.target.value)
                 }}/>
                 <div className={styles.TagsDiv}>
@@ -76,10 +88,10 @@ export function Filter(props: {
             
             <div className={`${styles.tags} ${isTagsExpanded ? styles.expanded : ''}`} onClick={filterTagsOnClick}>
                 <div className={styles.alwaysShowData}>
-                    <p>likes</p>
+                    <p>{translate("Filter-likes")}</p>
                     <img src={IMAGES.arrow} className={styles.arrowBtn} alt="" />
                 </div>
-                <ScrollBar setValue={setValue} value={value} setFilteredPosts= {setFilteredPosts} filteredPosts= {posts}/>
+                <ScrollBar setValue={setValue} value={value} setFilteredPosts= {setFilteredPostsFunc} filteredPosts= {filteredPosts}/>
             </div>
         </div>
     )

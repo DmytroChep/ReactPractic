@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "./homeWithTags.module.css"
 import { Filter } from "../../components/Filter/FIlter";
 import { Posts } from "../../components/Posts/Posts";
@@ -12,53 +12,51 @@ import { usePosts } from "../../hooks/use-posts";
 import { FourSquare } from "react-loading-indicators";
 import { ITag } from "../../components/Filter/filter-types";
 import { useTags } from "../../hooks/use-tags";
+import { PostContext } from "../../context/post-context";
 
 
-export function HomePage(){ 
+export function HomePage() { 
+    const postData = useContext(PostContext);
+    const tags = useTags();
     
-    const {posts, isLoaded} = usePosts()
-    const tags = useTags()
-    const [filteredPosts, setfilteredPosts] = useState<IPost[]>(posts)
-    const [choosedTags, setChoosedTags] = useState<ITag[]>(tags)
+    const [choosedTags, setChoosedTags] = useState<ITag[]>([]);
     const [value, setValue] = useState(0);
-    function setValueFunc(value: number){
-        setValue(value)
-    }
-    console.log(choosedTags)
-    function setFilteredPostsFunc(posts: IPost[]){
-        setfilteredPosts(posts)
-    }
-    function setTagsFunc(tags: ITag[]){
-        setChoosedTags(tags)
-    }
 
     useEffect(() => {
-        console.log(choosedTags)
-    }, [choosedTags])
+        if (tags && tags.length > 0) {
+            setChoosedTags(tags);
+        }
+    }, [tags]);
 
+    if (!postData) return null; 
+
+    const { filteredPosts, isLoaded, setFilteredPostsFunc } = postData;
 
     return (
         <div className={styles.parentElement}>
             <Header>
-                {
-                    isLogin ? (<Entry find="posts" setFilteredPosts={setFilteredPostsFunc}/>): false
-                }
+                {isLogin ? (
+                    <Entry find="posts"/>
+                ) : null}
             </Header>
-            {
-                isLogin ? (
-                    <div className={styles.main}>
-                            <Filter setValue={setValueFunc} 
-                            value={value} setFilteredPosts= {setFilteredPostsFunc} 
-                            posts={filteredPosts}
-                            setChoosedTags= {setTagsFunc}/>
-                            {isLoaded ? (<Posts filteredPosts={filteredPosts}/>) : 
-                            (<div className={styles.loadingShell}>
-                            <FourSquare color="white" size="medium" text="" textColor="" />
-                            </div>)}
-                            
-                    </div>
-                ): <Welcome/>
-            }
+            
+            {isLogin ? (
+                <div className={styles.main}>
+                    <Filter 
+                        setValue={setValue} 
+                        value={value} 
+                        setChoosedTags={setChoosedTags}
+                    />
+                    
+                    {isLoaded ? (
+                        <Posts filteredPosts={filteredPosts}/>
+                    ) : (
+                        <div className={styles.loadingShell}>
+                            <FourSquare color="white" size="medium" />
+                        </div>
+                    )}
+                </div>
+            ) : <Welcome />}
         </div>
-    )
+    );
 }

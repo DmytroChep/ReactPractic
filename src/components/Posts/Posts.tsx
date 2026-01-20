@@ -2,9 +2,11 @@ import styles from "./homeWithTags.module.css"
 import { Post } from "../Post/Post"
 import { IPost } from "../Post/post-types"
 import { Modal } from "../../shared/Modal"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { ICONS } from "../../shared/images"
 import { PostCreation } from "../Post-creation"
+import { ModalContext } from "../../context/modal-context"
+import { useCreatePost } from "../../hooks/use-create-post"
 
 
 export function Posts(props: {filteredPosts: IPost[]}){
@@ -15,11 +17,17 @@ export function Posts(props: {filteredPosts: IPost[]}){
 		setIsModalOpen(!isModalOpen);
         event.stopPropagation();
 	}
+
+    const modalData = useContext(ModalContext);
+    if (!modalData) return null; 
+    const { postData } = modalData;
+
     return( 
         <div className={styles.allPosts}>
             <div className={styles.addPost} onClick={handleInputFocus }>
                 <span>+</span>
             </div>
+
 
 
             <Modal 
@@ -29,7 +37,7 @@ export function Posts(props: {filteredPosts: IPost[]}){
 			doCloseOnOutsideClick={false}>
                 <div className={styles.modal} >
                     <div className={styles.headerModal}>
-                        <button className={`${styles.open} ${styles.headerButton}`} >
+                        <button className={`${styles.open} ${styles.headerButton}`}>
                             <ICONS.success className={styles.crossImage}/>
                         </button>
                         <button className={`${styles.close} ${styles.headerButton}`} onClick={handleInputFocus}>

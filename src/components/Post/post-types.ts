@@ -13,3 +13,24 @@ export interface IPost {
     comments?: IComment[];
 }
 
+export interface IPostCreation {
+    id?: number;
+    title: string;
+    description: string;
+    image: string;
+    likesCount: number;
+    tags?: ITag[];
+    comments?: IComment[];
+}
+
+
+export interface IPostUpdate {
+    id?: number;
+    title?: string;
+    description?: string;
+    image?: string;
+    likesCount?: number;
+    createdBy?: IUser;
+    tags?: ITag[];
+    comments?: IComment[];
+}

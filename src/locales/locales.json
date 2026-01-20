@@ -1,0 +1,47 @@
+{
+  "Filter-filterBy": {
+    "en": "filter by:",
+    "de": "filtern nach:",
+    "uk": "фільтрувати за:"
+  },
+  "Filter-tags": {
+    "en": "tags",
+    "de": "Tags",
+    "uk": "теги"
+  },
+  "Filter-likes": {
+    "en": "likes",
+    "de": "Likes",
+    "uk": "вподобайки"
+  },
+  "Filter-findTag": {
+    "en": "find tag",
+    "de": "Tag finden",
+    "uk": "знайти тег"
+  },
+  "TextArea-placeholder": {
+    "en": "enter your comment here...",
+    "de": "geben Sie hier Ihren Kommentar ein...",
+    "uk": "введіть свій коментар тут..."
+  },
+  "Welcome-title": {
+    "en": "Welcome!",
+    "de": "Willkommen!",
+    "uk": "Ласкаво просимо!"
+  },
+  "Welcome-description": {
+    "en": "this page will show you all posts instead of this message after you login. You also get the opportunity to create your own posts",
+    "de": "Diese Seite zeigt Ihnen nach dem Login alle Beiträge anstelle dieser Nachricht an. Sie haben auch die Möglichkeit, eigene Beiträge zu erstellen",
+    "uk": "на цій сторінці замість цього повідомлення відображатимуться всі пости після вашого входу. Ви також отримаєте можливість створювати власні пости"
+  },
+  "Welcome-linkToReg": {
+    "en": "registration",
+    "de": "Registrierung",
+    "uk": "реєстрація"
+  },
+  "Header-placeholder" : {
+    "en": "Find Posts",
+    "de": "Beiträge finden",
+    "uk": "Знайти пости"
+  }
+}
