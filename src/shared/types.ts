@@ -41,4 +41,17 @@ export interface IUser {
   password: string,
   isAdmin: boolean
 }
+
+export interface IUserReg{
+    firstName: string,
+    secondName: string,
+    email: string,
+    password: string,
+}
+
+export interface IUserLogin{
+    email: string,
+    password: string,
+}
+
 export const isLogin = true
