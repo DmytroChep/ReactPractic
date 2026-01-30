@@ -4,16 +4,20 @@ import { HomePage } from "./pages/Home/";
 import { PostPage } from "./pages/onePostPage";
 import { LoginPage } from "./pages/signIn-page";
 import { RegistrationPage } from "./pages/signUp-page";
+import { AuthLayout } from "./app/AuthLayout";
 
 export function AppRoutes(){
     return(
         <BrowserRouter>
             <Routes>
+                
                 <Route path="/" element= {<Layout />}>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/post/:id/" element={<PostPage />} />
-                    <Route path="/signIn/" element={<LoginPage />} />
-                    <Route path="/signUp/" element={<RegistrationPage />} />
+                </Route>
+                <Route path="/auth/" element= {<AuthLayout />}>
+                    <Route path="signIn/" element={<LoginPage />} />
+                    <Route path="signUp/" element={<RegistrationPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

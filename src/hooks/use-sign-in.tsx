@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { IPost, IPostCreation } from "../components/Post/post-types";
 import { IUser, IUserLogin, IUserReg } from "../shared/types";
-import { IFormData, ISignUpForm } from "../shared/Form/Form.types";
+import { IFormData, ISignInForm } from "../shared/Form/Form.types";
 
-export function useSignUp() {
-  const [user, setUser] = useState<IUser>();
+export function useSignIn() {
+  const [token, seToken] = useState<string>();
   const [error, setError] = useState<string | null>(null);
 
-  async function signUp(UserBody: IFormData) {
+  async function signIn(UserBody: IFormData) {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/user/registration`, {
+        console.log(UserBody)
+      const response = await fetch(`http://127.0.0.1:8000/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -22,7 +23,7 @@ export function useSignUp() {
       }
 
       const data = await response.json();
-      setUser(data);
+      seToken(data);
       return data
     } catch (err: any) {
       setError(err.message);
@@ -30,5 +31,5 @@ export function useSignUp() {
     }
   }
 
-  return { signUp, user, error };
+  return { signIn, token, error };
 }

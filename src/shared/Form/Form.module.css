@@ -2,5 +2,49 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 14px;
+    justify-content: center;
+    gap: 10px;
+    min-width: 720px;
+    min-height: 336px;
+    background-color: #07575B;
+    border-radius: 25px;
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+
+
+.formTitle{
+    font-size: 40px;
+    color: white;
+}
+
+.input{
+    width: 553px;
+    height: 63px;
+    border-radius: 1234px;
+    border: 0;
+    padding-left: 29px;   
+}
+
+.placeholder{
+    margin-left: 29px;
+    transform: translateY(115%);
+    color: #666;
+    margin-top: -10px;
+}
+
+.inputWithPlaceholder {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit{
+    width: 384px;
+    height: 58px;
+    background-color: #66A5AD;
+    border-radius: 1234px;
+    border: 0;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
 }
