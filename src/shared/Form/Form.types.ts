@@ -4,6 +4,7 @@ export interface ISignUpForm{
     email: string
     avatar: string 
     password: string 
+    confirmPassword: string
 }
 
 export interface ISignInForm{

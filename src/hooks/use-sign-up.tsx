@@ -27,6 +27,7 @@ export function useSignUp() {
     } catch (err: any) {
       setError(err.message);
       console.log("server error", err.message);
+      throw err
     }
   }
 

@@ -24,10 +24,12 @@ export function useSignIn() {
 
       const data = await response.json();
       seToken(data);
+      console.log(data)
       return data
     } catch (err: any) {
       setError(err.message);
       console.log("server error", err.message);
+      throw err
     }
   }
 
