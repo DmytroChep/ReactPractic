@@ -39,7 +39,14 @@ export interface IUser {
   email: string,
   avatar: string,
   password: string,
-  isAdmin: boolean
+  isAdmin: boolean,
+    createdPosts: IPost[],
+    likedPosts: [
+        {
+            postId: number,
+            userId: number
+        }
+    ]
 }
 
 export interface IUserReg{

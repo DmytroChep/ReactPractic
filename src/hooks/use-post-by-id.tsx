@@ -6,6 +6,8 @@ export function usePostById(postId: number){
     const [post, setPost] = useState<IPost>()
     const [error, setError] = useState(null)
 
+    
+
     useEffect(() => {
             async function getPost(){
             try{

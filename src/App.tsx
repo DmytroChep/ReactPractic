@@ -6,16 +6,19 @@ import { AppRoutes } from "./AppRoutes";
 import { PostContext, PostContextProvider } from "./context/post-context";
 import { ModalContext, ModalContextProvider } from "./context/modal-context";
 import { LocalizationContextProvider } from "./context/localization-context";
+import { UserContextProvider } from "./context/user-context";
 
 export function App(){
     return (
-        <LocalizationContextProvider>
-            <ModalContextProvider>
-                <PostContextProvider>
-                    <AppRoutes/>
-                </PostContextProvider>
-            </ModalContextProvider>
-        </LocalizationContextProvider>
+        <UserContextProvider>
+            <LocalizationContextProvider>
+                <ModalContextProvider>
+                    <PostContextProvider>
+                        <AppRoutes/>
+                    </PostContextProvider>
+                </ModalContextProvider>
+            </LocalizationContextProvider>
+        </UserContextProvider>
     )
             
             

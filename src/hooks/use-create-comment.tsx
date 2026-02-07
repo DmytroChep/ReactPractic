@@ -1,20 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/user-context";
 
 export function useCreateComment(postId: number, commentBody: string) {
   const [commentData, setCommentData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
+  const userContextData = useContext(UserContext);
+
+  const token = userContextData?.token;
+
   async function createComment() {
+    if (!token) {
+      setError("User is not authenticated");
+      throw new Error("No token found");
+    }
+
     try {
+      setError(null);
       const response = await fetch(`http://127.0.0.1:8000/posts/${postId}/comments`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdGE6aW1hZ2UvanAzMTEyMzYyNmVnO2Jhc2UyMTIzMTI2NCwvOWovNEFBZHdmcXdmUVNrWkpSZ0JBQUQvQGdtYWlsLmNvbTEiLCJpYXQiOjE3NjgyMzA1MzMsImV4cCI6MTc2ODgzNTMzM30.5oY5T_vIBRLKgIqzBU9RMN2YZFXr5jKPffye_DJl4A8"
+          "Authorization": `Bearer ${token}`
         },
-        body: JSON.stringify({
-            body: commentBody
-        })});
+        body: JSON.stringify({ body: commentBody })
+      });
 
       if (!response.ok) {
         const errorData = await response.json();
@@ -23,10 +33,11 @@ export function useCreateComment(postId: number, commentBody: string) {
 
       const data = await response.json();
       setCommentData(data);
-      return data
+      return data;
     } catch (err: any) {
       setError(err.message);
       console.log("server error", err.message);
+      throw err; 
     }
   }
 

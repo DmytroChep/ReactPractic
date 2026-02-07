@@ -11,7 +11,7 @@ export function Comments({ comments: initialComments, postId }: { comments: ICom
     const [localComments, setLocalComments] = useState<IComment[]>(initialComments || []);
     
     const { createComment } = useCreateComment(postId, inputData);
-
+    
     const handleSend = async () => {
         if (!inputData.trim()){
             return;

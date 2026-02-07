@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 import styles from "./Form.module.css"
 import { IFormData, ISignInForm, ISignUpForm } from "./Form.types";
-import { useSignUp } from "../../hooks/use-sign-up";
-import { useSignIn } from "../../hooks/use-sign-in";
 import { useNavigate } from 'react-router-dom';
+import { useContext } from "react";
+import { ModalContext } from "../../context/modal-context";
+import { UserContext } from "../../context/user-context";
 
 
 export function Form(props: {variant: "signIn" | "signUp"}){
@@ -13,8 +14,9 @@ export function Form(props: {variant: "signIn" | "signUp"}){
 
     const navigate = useNavigate()
 
-    const {signUp, error: signUpError} = useSignUp()
-    const {signIn, error: signInError} = useSignIn()
+    const UserCotnextData = useContext(UserContext);
+    if (!UserCotnextData) return null; 
+    const { signUp, signIn } = UserCotnextData;
 
     async function onSubmit(data: IFormData) {
         try {

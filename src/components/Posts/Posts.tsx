@@ -51,7 +51,7 @@ export function Posts(props: {filteredPosts: IPost[]}){
 			</Modal>
 
             {filteredPosts.map((element: IPost, idx: number) => {
-                return <Post key={idx} postData={element}/>
+                return <Post  key={idx} postData={element}/>
             })} 
         </div>
     )

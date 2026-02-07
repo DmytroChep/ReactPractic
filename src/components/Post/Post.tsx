@@ -4,6 +4,7 @@ import { ICONS, IMAGES } from "../../shared/images"
 import { useLikePost } from "../../hooks/use-like-post"
 import { useLikeOrUnlike } from "../../hooks/use-like-or-unlike"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 export function Post(props: {postData: IPost}){
     const {postData} = props
@@ -14,6 +15,7 @@ export function Post(props: {postData: IPost}){
     const { isLiked, toggleLike, error } = useLikeOrUnlike(postData.id, setLikesCountFunc, likesCount);
 
     const HeartIcon = isLiked ? ICONS.filledLike : ICONS.like;
+    const navigate = useNavigate()
 
     return( 
         <div className={styles.post}>
@@ -22,7 +24,7 @@ export function Post(props: {postData: IPost}){
                     <img src={IMAGES.profile} className={styles.userAvatar} alt="" />
                     <p className={styles.createdByName}>{postData.createdBy.firstName}</p>
                 </div>
-                <div className={styles.secondHalfHeader}>
+                <div className={styles.secondHalfHeader} >
                     <div className={styles.likesAndText}>
                         <p className={styles.likesCount}>{likesCount}</p>
                         <HeartIcon className={styles.likeImage} onClick={toggleLike}/>
@@ -30,7 +32,9 @@ export function Post(props: {postData: IPost}){
                     <img src={IMAGES.threeDots} className={styles.tripleDots} alt="" />
                 </div>
             </div>
-            <div className={styles.mainPost}>
+            <div className={styles.mainPost} onClick={() => {
+                    navigate(`/post/${postData.id}`)
+                }}>
                 <p className={styles.title}>{postData.title}</p>
                 <p className={styles.description}>{postData.description}</p>
                 <img src={IMAGES.cat} className={styles.postImage} alt={postData.image} />

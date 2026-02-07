@@ -6,7 +6,7 @@ import { ReactNode, useState } from "react"
 
 export function Main(props: {children: ReactNode}) {
     return (
-        <main >
+        <main className={styles.main}>
             {props.children}
         </main>
         )

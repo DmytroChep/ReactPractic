@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../context/user-context";
 
 export function useUnlikePost(postId: number) {
   const [status, setStatus] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
+
+  const userContextData = useContext(UserContext)
+  const token = userContextData?.token
 
   async function unlike() {
     try {
@@ -10,7 +14,7 @@ export function useUnlikePost(postId: number) {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdGE6aW1hZ2UvanAzMTEyMzYyNmVnO2Jhc2UyMTIzMTI2NCwvOWovNEFBZHdmcXdmUVNrWkpSZ0JBQUQvQGdtYWlsLmNvbTEiLCJpYXQiOjE3NjgyMzA1MzMsImV4cCI6MTc2ODgzNTMzM30.5oY5T_vIBRLKgIqzBU9RMN2YZFXr5jKPffye_DJl4A8"
+          "Authorization": `Bearer ${token}`
         }
       });
 

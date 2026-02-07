@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLikePost } from "./use-like-post";
 import { useUnlikePost } from "./use-unlike-post";
+import { UserContext } from "../context/user-context";
 
 export function useLikeOrUnlike(postId: number, setLikesCount: (likesCount: number) => void, likesCount: number) {
   const [isLiked, setIsLiked] = useState<boolean | null>(null);
@@ -8,6 +9,10 @@ export function useLikeOrUnlike(postId: number, setLikesCount: (likesCount: numb
 
   const { like } = useLikePost(postId);
   const { unlike } = useUnlikePost(postId);
+
+  const userContextData = useContext(UserContext)
+
+  const token = userContextData?.token
 
   const toggleLike = async () => {
     try {
@@ -32,7 +37,7 @@ export function useLikeOrUnlike(postId: number, setLikesCount: (likesCount: numb
           method: "GET",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdGE6aW1hZ2UvanAzMTEyMzYyNmVnO2Jhc2UyMTIzMTI2NCwvOWovNEFBZHdmcXdmUVNrWkpSZ0JBQUQvQGdtYWlsLmNvbTEiLCJpYXQiOjE3NjgyMzA1MzMsImV4cCI6MTc2ODgzNTMzM30.5oY5T_vIBRLKgIqzBU9RMN2YZFXr5jKPffye_DJl4A8"
+            "Authorization": `Bearer ${token}`
           }
         });
         const data = await response.json();
